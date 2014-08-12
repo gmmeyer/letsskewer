@@ -19,10 +19,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id]).includes(:skewer).includes(:skewer_posts)
+    @user = User.find(params[:id]).includes(:skewer).includes(:skewer_posts).includes(:user_posts)
   end
 
   def index
+    @users = Users.all
   end
 
   def destroy

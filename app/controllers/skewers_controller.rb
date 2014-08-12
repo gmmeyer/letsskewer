@@ -6,6 +6,7 @@ class SkewersController < ApplicationController
   end
 
   def index
+    @skewers = Skewer.all
   end
 
   def new
