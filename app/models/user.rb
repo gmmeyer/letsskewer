@@ -8,10 +8,10 @@ class User < ActiveRecord::Base
 
   before_validation :ensure_token
 
-  has_many :posts
-  has_one :skewer
+  has_many :user_posts, class_name: "Post", dependent: :destroy
+  has_one :skewer, dependent: :destroy
 
-  has_many :skewer_posts, through: :skewer, source: :posts
+  has_many :skewer_posts, through: :skewer, source: :skewer_posts
 
   def self.generate_token
     SecureRandom.urlsafe_base64(32)
