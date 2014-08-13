@@ -3,6 +3,7 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.text :body, null: false
       t.integer :user_id
+      t.boolean :anonymous
       
       t.integer, :skewer_id, null: false
 
