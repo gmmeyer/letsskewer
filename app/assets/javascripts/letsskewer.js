@@ -4,7 +4,6 @@ window.Letsskewer = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
   }
 };
 
